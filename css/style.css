@@ -1,0 +1,208 @@
+/* ===========================================================
+   Rida Shah — Portfolio Stylesheet
+   Lab 3: HTML Advanced - Personal Portfolio II
+   Layout for the nav bar, hero section and gallery is built
+   with float + clear (no flexbox/grid used for those parts).
+   =========================================================== */
+
+:root{
+  --ink:#14181F;
+  --paper:#F3F5F4;
+  --paper-2:#E9EDEA;
+  --line:#D6DBD7;
+  --text:#1D2027;
+  --muted:#5B6169;
+  --accent:#4A7A6F;
+  --accent-dark:#345850;
+  --accent-2:#C97A3B;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--paper);
+  color:var(--text);
+  font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  line-height:1.6;
+}
+h1,h2,h3{
+  font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;
+  font-weight:600;
+  color:var(--ink);
+  margin:0 0 .4em 0;
+}
+a{color:var(--accent-dark);}
+a:hover{color:var(--accent-2);}
+.wrap{max-width:880px;margin:0 auto;padding:0 28px;}
+
+/* Generic clearfix — used anywhere floated children need containing */
+.clearfix::after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+/* ---------- Header / Navigation (float based) ---------- */
+header.site{
+  background:var(--ink);
+  border-bottom:4px solid var(--accent);
+}
+header.site .wrap{
+  padding-top:22px;
+  padding-bottom:22px;
+}
+.brand{
+  float:left;
+  font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;
+  font-size:1.4em;
+  color:#F3F5F4;
+  text-decoration:none;
+  letter-spacing:.3px;
+  line-height:1.6;
+}
+.brand span{color:var(--accent-2);}
+
+nav.primary{
+  float:right;
+}
+nav.primary a{
+  float:left;
+  color:#D8DDDA;
+  text-decoration:none;
+  margin-left:22px;
+  font-size:.95em;
+  padding-bottom:4px;
+  border-bottom:2px solid transparent;
+}
+nav.primary a:hover{color:#fff; border-bottom-color:var(--accent-2);}
+nav.primary a.current{color:#fff; border-bottom-color:var(--accent);}
+
+main{padding:52px 0 30px 0;}
+section{margin-bottom:46px;}
+
+.lede{font-size:1.14em; color:var(--text); max-width:62ch;}
+.muted{color:var(--muted);}
+.about-text{max-width:68ch;}
+
+/* ---------- Home hero (photo + intro text, float based) ---------- */
+.hero{margin-bottom:46px;}
+.hero-text{
+  float:left;
+  width:63%;
+}
+.hero-photo{
+  float:right;
+  width:32%;
+  text-align:center;
+}
+.hero-photo img{
+  width:220px;
+  height:220px;
+  max-width:100%;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #14181F;
+}
+
+.facts{
+  list-style:none; margin:26px 0 0 0; padding:0;
+  border-top:1px solid var(--line);
+  padding-top:22px;
+}
+.facts li{
+  float:left;
+  width:50%;
+  padding-left:16px;
+  border-left:3px solid var(--accent);
+  margin-bottom:14px;
+  box-sizing:border-box;
+}
+.facts b{display:block; color:var(--ink); font-size:.82em; letter-spacing:.02em;}
+.facts span{color:var(--muted);}
+
+.cta-row{margin-top:34px;}
+.cta-row::after{content:""; display:table; clear:both;}
+.btn{
+  float:left;
+  display:inline-block; text-decoration:none;
+  padding:11px 20px; border:1px solid var(--ink); color:var(--ink);
+  font-size:.95em;
+  margin-right:16px;
+  margin-bottom:12px;
+}
+.btn:hover{background:var(--ink); color:#fff;}
+.btn.solid{background:var(--accent); border-color:var(--accent); color:#fff;}
+.btn.solid:hover{background:var(--accent-dark); border-color:var(--accent-dark); color:#fff;}
+
+/* ---------- Skills page ---------- */
+.skill-group{margin-bottom:36px;}
+.skill-group h2{
+  font-size:1.15em; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:16px;
+}
+.chip-row::after{content:""; display:table; clear:both;}
+.chip{
+  float:left;
+  border:1px solid var(--line); background:var(--paper-2);
+  padding:8px 14px; font-size:.92em; color:var(--text);
+  margin:0 10px 10px 0;
+}
+.chip b{color:var(--accent-dark); font-weight:600;}
+
+/* ---------- Hobbies page ---------- */
+.hobby-list{list-style:none; margin:0; padding:0;}
+.hobby-list li{
+  border-left:3px solid var(--accent-2);
+  padding:6px 0 6px 18px; margin-bottom:22px;
+}
+.hobby-list h3{margin-bottom:4px; font-size:1.08em;}
+.hobby-list p{margin:0; color:var(--muted); max-width:60ch;}
+
+/* ---------- Gallery page (float + clear layout) ---------- */
+.gallery-grid::after{
+  content:"";
+  display:table;
+  clear:both;
+}
+.gallery-grid figure{
+  float:left;
+  width:47%;
+  margin:0 3% 18px 0;
+  border:1px solid var(--line); background:#fff; padding:8px;
+  box-sizing:border-box;
+}
+.gallery-grid figure:nth-child(2n){
+  margin-right:0;
+}
+.gallery-grid img{display:block; width:100%; height:auto;}
+.gallery-grid figcaption{
+  padding:10px 4px 2px 4px; font-size:.88em; color:var(--muted);
+}
+
+/* ---------- Contact page ---------- */
+.contact-block{
+  border-top:1px solid var(--line); padding-top:24px; margin-top:6px;
+}
+.contact-list{list-style:none; padding:0; margin:18px 0 0 0;}
+.contact-list li{
+  padding:12px 0; border-bottom:1px solid var(--line);
+}
+.contact-list li::after{content:""; display:table; clear:both;}
+.contact-list b{float:left; width:120px; color:var(--ink);}
+.contact-list li span{display:block; overflow:hidden;}
+
+footer{
+  clear:both;
+  border-top:1px solid var(--line); margin-top:20px;
+  padding:24px 0 40px 0; color:var(--muted); font-size:.88em;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:600px){
+  .hero-text, .hero-photo{float:none; width:100%;}
+  .hero-photo{text-align:left; margin-top:20px;}
+  .facts li{float:none; width:100%;}
+  .gallery-grid figure{float:none; width:100%; margin-right:0;}
+  nav.primary{float:none; clear:both; width:100%; margin-top:10px;}
+  nav.primary a{margin-left:0; margin-right:18px;}
+  .brand{float:none;}
+  header.site .wrap::after{content:""; display:table; clear:both;}
+}
