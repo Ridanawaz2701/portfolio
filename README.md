@@ -41,7 +41,7 @@ portfolio/
 - The site is responsive: floats are dropped on small screens via a media query.
 
 ## Live site
-Deployed with GitHub Pages: `https://<your-username>.github.io/portfolio/`
+Deployed with GitHub Pages: https://ridanawaz2701.github.io/portfolio/
 
 ## Repository
-`https://github.com/<your-username>/portfolio`
+https://github.com/Ridanawaz2701/portfolio
